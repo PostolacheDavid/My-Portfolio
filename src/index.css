@@ -1,0 +1,78 @@
+/* || RESET */
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: auto;
+}
+
+/* || VARIABLES */
+
+:root {
+  /* FONTS */
+
+  /* COLORS */
+  --BACKGROUND-COLOR: rgb(13, 27, 42);
+  --SILVER-LAKE-BLUE: rgb(119, 141, 169);
+}
+
+/* || UTILITY */
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+/* || GENERAL STYLES */
+
+/* || LOADER */
+
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--BACKGROUND-COLOR);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loader {
+  height: 100px;
+  width: 100px;
+  border: 10px solid var(--SILVER-LAKE-BLUE);
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  animation: 1.5s spin ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0) rotateY(0);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(0);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+}
