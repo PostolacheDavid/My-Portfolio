@@ -1,5 +1,11 @@
+import Loader from "./components/Loader";
+
 function App() {
-  return <h1>My Portfolio</h1>;
+  return (
+    <>
+      <Loader />
+    </>
+  );
 }
 
 export default App;
