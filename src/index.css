@@ -11,7 +11,7 @@
 img {
   display: block;
   max-width: 100%;
-  max-height: auto;
+  height: auto;
 }
 
 /* || VARIABLES */
@@ -22,6 +22,7 @@ img {
   /* COLORS */
   --BACKGROUND-COLOR: rgb(13, 27, 42);
   --SILVER-LAKE-BLUE: rgb(119, 141, 169);
+  --PLATINUM: rgb(224, 225, 221);
 }
 
 /* || UTILITY */
@@ -56,13 +57,41 @@ img {
   z-index: 1000;
 }
 
+.loader-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 1s ease-out;
+}
+
+.slide-left {
+  transform: translateX(-50px);
+}
+
+.loader-name {
+  position: absolute;
+  top: 10%;
+  transform: translateX(50%);
+  opacity: 0;
+  font-size: 1.5rem;
+  color: var(--PLATINUM);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.slide-out {
+  transform: translateX(120px);
+  opacity: 1;
+}
+
 .loader {
   height: 100px;
   width: 100px;
   border: 10px solid var(--SILVER-LAKE-BLUE);
   border-top-right-radius: 20%;
   border-bottom-left-radius: 20%;
-  animation: 1.5s spin ease-in-out infinite;
+  animation: 2s spin ease-in-out;
+  animation-iteration-count: 2.5;
 }
 
 @keyframes spin {
@@ -70,9 +99,9 @@ img {
     transform: rotateX(0) rotateY(0);
   }
   50% {
-    transform: rotateX(180deg) rotateY(0);
+    transform: rotateX(360deg) rotateY(0);
   }
   100% {
-    transform: rotateX(180deg) rotateY(180deg);
+    transform: rotateX(360deg) rotateY(360deg);
   }
 }
