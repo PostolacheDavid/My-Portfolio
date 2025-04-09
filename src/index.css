@@ -20,9 +20,10 @@ img {
   /* FONTS */
 
   /* COLORS */
-  --BACKGROUND-COLOR: rgb(13, 27, 42);
-  --SILVER-LAKE-BLUE: rgb(119, 141, 169);
-  --PLATINUM: rgb(224, 225, 221);
+  --LIGHT-SEA-GREEN: rgb(46, 196, 182);
+  --ORANGE-PEEL: rgb(255, 159, 28);
+  --MINT-GREEN: rgb(203, 243, 240);
+  --HUNYADI-YELLOW: rgb(255, 191, 105);
 }
 
 /* || UTILITY */
@@ -50,7 +51,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--BACKGROUND-COLOR);
+  background-color: var(--LIGHT-SEA-GREEN);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +85,7 @@ img {
   transform: translateX(50%);
   opacity: 0;
   font-size: 1.5rem;
-  color: var(--PLATINUM);
+  color: var(--MINT-GREEN);
   transition: transform 1s ease-out, opacity 1s ease-out, left 1s ease-out;
 }
 
@@ -96,7 +97,7 @@ img {
 .loader {
   height: 100px;
   width: 100px;
-  border: 10px solid var(--SILVER-LAKE-BLUE);
+  border: 10px solid var(--ORANGE-PEEL);
   border-top-right-radius: 20%;
   border-bottom-left-radius: 20%;
   animation: 2s spin ease-in-out;
@@ -113,4 +114,66 @@ img {
   100% {
     transform: rotateX(360deg) rotateY(360deg);
   }
+}
+
+/* || NAVBAR */
+
+header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--LIGHT-SEA-GREEN);
+}
+
+nav {
+  height: 5rem;
+  width: 50%;
+}
+
+ul {
+  list-style: none;
+  font-size: 1.5rem;
+  color: var(--MINT-GREEN);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+
+.logo-wrapper {
+  width: 8%;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--MINT-GREEN);
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border: 10px solid var(--ORANGE-PEEL);
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+}
+
+/* || MAIN */
+
+main {
+  height: calc(100vh - 5rem);
+}
+
+/* || ABOUT */
+
+.about-section {
+  height: calc(100vh - 5rem);
+  background-color: var(--MINT-GREEN);
 }
