@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { toggleValue } from "../features/isLoading/isLoadingSlice";
 
 const Loader = () => {
   const [showName, setShowName] = useState(false);
   const [moveUp, setMoveUp] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const nameTimer = setTimeout(() => {
@@ -11,9 +15,13 @@ const Loader = () => {
     const moveUpTimer = setTimeout(() => {
       setMoveUp(true);
     }, 4500);
+    const unloadTimer = setTimeout(() => {
+      dispatch(toggleValue());
+    }, 8000);
     return () => {
       clearTimeout(nameTimer);
       clearTimeout(moveUpTimer);
+      clearTimeout(unloadTimer);
     };
   }, []);
 
