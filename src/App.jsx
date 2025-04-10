@@ -10,7 +10,7 @@ function App() {
   console.log(isLoading);
   return (
     <>
-      {isLoading && <Loader />}
+      {/* isLoading && <Loader /> */}
       <Navbar />
       <Main />
     </>

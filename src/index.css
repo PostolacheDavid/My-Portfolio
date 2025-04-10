@@ -186,7 +186,7 @@ main {
   justify-content: center;
 }
 
-.about-section img {
+.about-img {
   width: 353px;
   height: 360px;
   border-radius: 50%;
@@ -211,7 +211,7 @@ main {
   margin-top: 2rem;
 }
 
-.slide-in-img {
+/* .slide-in-img {
   animation: img-slide 1s ease-out forwards;
 }
 
@@ -224,4 +224,4 @@ main {
     transform: translateX(0);
     opacity: 1;
   }
-}
+} */
