@@ -17,7 +17,7 @@ const Loader = () => {
     }, 4500);
     const unloadTimer = setTimeout(() => {
       dispatch(toggleValue());
-    }, 8500);
+    }, 8000);
     return () => {
       clearTimeout(nameTimer);
       clearTimeout(moveUpTimer);

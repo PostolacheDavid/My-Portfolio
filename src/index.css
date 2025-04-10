@@ -18,6 +18,7 @@ img {
 
 :root {
   /* FONTS */
+  --FONT: Arial, Helvetica, sans-serif;
 
   /* COLORS */
   --LIGHT-SEA-GREEN: rgb(46, 196, 182);
@@ -86,6 +87,7 @@ img {
   opacity: 0;
   font-size: 1.5rem;
   color: var(--MINT-GREEN);
+  font-family: var(--FONT);
   transition: transform 1s ease-out, opacity 1s ease-out, left 1s ease-out;
 }
 
@@ -125,6 +127,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  font-family: var(--FONT);
   background-color: var(--LIGHT-SEA-GREEN);
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
 }
@@ -145,14 +148,14 @@ ul {
 }
 
 .logo-wrapper {
-  width: 8%;
-  margin-left: 1rem;
+  width: 9%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .text {
+  margin-top: 0.1rem;
   font-size: 1rem;
   line-height: 1rem;
   color: var(--MINT-GREEN);
@@ -170,6 +173,7 @@ ul {
 
 body {
   background-color: var(--MINT-GREEN);
+  font-family: var(--FONT);
 }
 
 main {
@@ -187,19 +191,19 @@ main {
 }
 
 .about-img {
+  margin-top: 2rem;
   width: 353px;
   height: 360px;
   border-radius: 50%;
 }
 
 .info-card {
-  margin-top: 2rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
   width: 400px;
   height: 400px;
   border-radius: 20px;
   text-align: center;
-  color: black;
+  color: #242124;
   text-align: left;
 }
 
