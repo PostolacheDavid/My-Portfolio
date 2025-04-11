@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header>
       <div className="logo-wrapper">
@@ -9,7 +17,18 @@ const Navbar = () => {
           <p>Portfolio</p>
         </div>
       </div>
-      <nav>
+
+      {/* HAMBURGER ICON (MOBILE ONLY) */}
+      <div
+        className={`hamburger ${menuOpen ? "open" : ""}`}
+        onClick={handleClick}
+      >
+        <span className="line1"></span>
+        <span className="line2"></span>
+        <span className="line3"></span>
+      </div>
+
+      <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
         <ul>
           <li>About</li>
           <li>Projects</li>
