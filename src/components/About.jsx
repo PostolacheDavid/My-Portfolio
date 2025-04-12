@@ -10,30 +10,33 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".about-img", {
+      gsap.to(".about-img", {
         scrollTrigger: {
           trigger: ".about-img",
           start: "top 80%",
-          toggleActions: "play none none none",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
         },
-        x: -200,
-        opacity: 0,
-        duration: 5.2,
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
         ease: "power3.out",
       });
 
-      gsap.from(".info-card", {
+      gsap.to(".info-card", {
         scrollTrigger: {
           trigger: ".info-card",
           start: "top 85%",
-          toggleActions: "play none none none",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
         },
-        x: 100,
-        opacity: 0,
-        duration: 5.2,
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
         ease: "power3.out",
       });
     }, aboutRef);
+
     return () => ctx.revert();
   }, []);
 

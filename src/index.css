@@ -121,6 +121,9 @@ img {
 /* || NAVBAR */
 
 header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
   width: 100%;
   height: 5rem;
   display: flex;
@@ -203,10 +206,13 @@ ul {
 body {
   background-color: var(--MINT-GREEN);
   font-family: var(--FONT);
+  max-width: 100vw;
 }
 
 main {
-  height: calc(100vh - 5rem);
+  height: calc(2 * (100vh - 5rem));
+  padding-top: 5rem;
+  max-width: 100vw;
 }
 
 /* || ABOUT */
@@ -224,6 +230,8 @@ main {
   width: 353px;
   height: 360px;
   border-radius: 50%;
+  opacity: 0;
+  transform: translateX(-200px);
 }
 
 .info-card {
@@ -234,6 +242,8 @@ main {
   text-align: center;
   color: #242124;
   text-align: left;
+  opacity: 0;
+  transform: translateX(100px);
 }
 
 .info-card h2 {
@@ -523,4 +533,22 @@ main {
   main {
     height: auto;
   }
+}
+
+/* || PROJECTS SECTION */
+
+.projects-section {
+  height: calc(100vh - 5rem);
+  position: relative;
+}
+
+.slider {
+  position: absolute;
+  top: calc(50% - 285px);
+  height: 570px;
+  width: 100%;
+  background-color: var(--LIGHT-SEA-GREEN);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateX(-2000px);
 }
