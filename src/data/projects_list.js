@@ -1,0 +1,32 @@
+const projects_list = [
+  {
+    id: 1,
+    title: "Portfolio Website",
+    description: "A responsive portfolio built with React and GSAP animations.",
+    image: "📃",
+    link: "http://localhost:5173/",
+  },
+  {
+    id: 2,
+    title: "Vanilla JS Game",
+    description: "A game built in javascript without any frameworks",
+    image: "🎮",
+    link: "http://localhost:5173/",
+  },
+  {
+    id: 3,
+    title: "Chat Room",
+    description: "A chat room website made in react",
+    image: "💬",
+    link: "http://localhost:5173/",
+  },
+  {
+    id: 4,
+    title: "Elderly Care App",
+    description: "A medical app built with Python and MySql",
+    image: "💊",
+    link: "http://localhost:5173/",
+  },
+];
+
+export default projects_list;

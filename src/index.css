@@ -561,7 +561,7 @@ main {
 
 .slider {
   height: 570px;
-  width: 100%;
+  width: 90%;
   background-color: var(--LIGHT-SEA-GREEN);
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -580,17 +580,45 @@ main {
   overflow: hidden;
 }
 
+.card-wrapper:active {
+  transform: scale(1) translateY(5px);
+}
+
 .card {
   position: absolute;
   width: 200px;
   height: 320px;
-  text-align: justify;
-  background-color: #fff;
+  text-align: center;
+  background-image: linear-gradient(
+    to top,
+    var(--MINT-GREEN),
+    #fff,
+    var(--MINT-GREEN)
+  );
   border-radius: 10px;
   padding: 20px;
   transition: 0.5s;
   left: calc(50% - 110px);
   top: 0;
+  transition: 0.1s ease-in-out all;
+}
+
+.card p {
+  margin-top: 2rem;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to top,
+    var(--MINT-GREEN-DARK),
+    #f0f0f0,
+    var(--MINT-GREEN-DARK)
+  );
+}
+
+.card:active {
+  transform: scale(1);
 }
 
 #next,

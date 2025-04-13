@@ -1,23 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import projects_list from "../data/projects_list";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Slider = () => {
   const sliderRef = useRef(null);
-  const [active, setActive] = useState(3);
+  const [active, setActive] = useState(Math.floor(projects_list.length / 2));
   const itemsRef = useRef([]);
-
-  const slides = [
-    "Slide 1",
-    "Slide 2",
-    "Slide 3",
-    "Slide 4",
-    "Slide 5",
-    "Slide 6",
-    "Slide 7",
-  ];
+  const [slides, setSlides] = useState(projects_list);
 
   const loadShow = () => {
     const items = itemsRef.current;
@@ -61,7 +53,7 @@ const Slider = () => {
       },
       x: 0,
       opacity: 1,
-      duration: 3.5,
+      duration: 1.5,
       ease: "power3.out",
     });
   }, [sliderRef]);
@@ -74,19 +66,22 @@ const Slider = () => {
     <div className="slider" ref={sliderRef}>
       <h1 className="caption">My Projects!</h1>
       <div className="slider-items">
-        {slides.map((text, index) => {
+        {slides.map((slide) => {
           return (
-            <div
-              key={index}
-              className="card"
-              ref={(el) => (itemsRef.current[index] = el)}
-            >
-              <h1>{text}</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat facere in numquam impedit placeat eius cumque
-                architecto natus similique.
-              </p>
+            <div className="card-wrapper">
+              <div
+                role="button"
+                onClick={() => {
+                  console.log(`Card ${slide.title} clicked!`);
+                }}
+                key={slide.id}
+                className="card"
+                ref={(el) => (itemsRef.current[slides.indexOf(slide)] = el)}
+              >
+                <h1>{slide.title}</h1>
+                <p>{slide.image}</p>
+                <p>{slide.description}</p>
+              </div>
             </div>
           );
         })}
