@@ -2,7 +2,7 @@ import Slider from "./Slider";
 
 const Projects = () => {
   return (
-    <section className="projects-section">
+    <section id="projects" className="projects-section">
       <Slider />
     </section>
   );

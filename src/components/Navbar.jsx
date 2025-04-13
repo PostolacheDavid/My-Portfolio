@@ -30,8 +30,12 @@ const Navbar = () => {
 
       <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
         <ul>
-          <li>About</li>
-          <li>Projects</li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
           <li>Contact</li>
         </ul>
       </nav>

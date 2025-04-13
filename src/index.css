@@ -24,6 +24,7 @@ img {
   --LIGHT-SEA-GREEN: rgb(46, 196, 182);
   --DAVYS-GRAY: rgb(89, 87, 88);
   --MINT-GREEN: rgb(203, 243, 240);
+  --MINT-GREEN-DARK: rgb(173, 213, 210);
   --HUNYADI-YELLOW: rgb(255, 191, 105);
 }
 
@@ -43,6 +44,10 @@ img {
 }
 
 /* || GENERAL STYLES */
+
+html {
+  scroll-behavior: smooth;
+}
 
 /* || LOADER */
 
@@ -199,6 +204,15 @@ ul {
 
 .hamburger.open .line3 {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+header a {
+  color: var(--MINT-GREEN);
+  text-decoration: none;
+}
+
+header a:hover {
+  color: var(--MINT-GREEN-DARK);
 }
 
 /* || MAIN */
@@ -539,16 +553,68 @@ main {
 
 .projects-section {
   height: calc(100vh - 5rem);
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .slider {
-  position: absolute;
-  top: calc(50% - 285px);
   height: 570px;
   width: 100%;
   background-color: var(--LIGHT-SEA-GREEN);
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transform: translateX(-2000px);
+}
+
+.slider-items {
+  margin-top: 4%;
+  position: relative;
+  width: 98%;
+  height: 98%;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  width: 200px;
+  height: 320px;
+  text-align: justify;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  left: calc(50% - 110px);
+  top: 0;
+}
+
+#next,
+#prev {
+  position: absolute;
+  top: 40%;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  font-size: xx-large;
+  font-family: monospace;
+  font-weight: bold;
+  left: 50px;
+  cursor: pointer;
+}
+
+#next {
+  left: unset;
+  right: 50px;
+}
+
+.slider .caption {
+  color: var(--MINT-GREEN);
+  text-align: center;
+  margin-right: 1rem;
+  margin-top: 2rem;
 }
