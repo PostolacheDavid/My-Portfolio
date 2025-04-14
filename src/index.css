@@ -234,11 +234,23 @@ main {
 /* || ABOUT */
 
 .about-section {
+  position: relative;
   height: calc(100vh - 5rem);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.about-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: var(--MINT-GREEN-DARK);
 }
 
 .about-img {
@@ -671,7 +683,7 @@ main {
   height: 50%;
   border-radius: 2rem;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  border: 5px solid var(--LIGHT-SEA-GREEN);
+  /* border: 5px solid var(--LIGHT-SEA-GREEN); */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -686,9 +698,31 @@ main {
   justify-content: space-between;
 }
 
-.btn-container button {
+.btn-container a {
   background-color: var(--LIGHT-SEA-GREEN);
   color: var(--MINT-GREEN);
+  border: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-container a:hover {
+  cursor: pointer;
+  background-color: var(--LIGHT-SEA-GREEN-LIGHTER);
+  transition: 0.1s ease-in-out all;
+}
+
+.btn-container a:active {
+  transform: scale(1) translateY(5px);
+}
+
+.btn-container button {
+  background-color: var(--ORANGE-PEEL);
+  color: #fff;
+  font-weight: bolder;
   border: none;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -696,21 +730,5 @@ main {
 }
 
 .btn-container button:hover {
-  cursor: pointer;
-  background-color: var(--LIGHT-SEA-GREEN-LIGHTER);
-  transition: 0.1s ease-in-out all;
-}
-
-.btn-container button:active {
-  transform: scale(1) translateY(5px);
-}
-
-.btn-container button:last-child {
-  background-color: var(--ORANGE-PEEL);
-  color: #fff;
-  font-weight: bolder;
-}
-
-.btn-container button:last-child:hover {
   background-color: var(--HUNYADI-YELLOW);
 }
