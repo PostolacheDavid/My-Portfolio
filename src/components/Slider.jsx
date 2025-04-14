@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import projects_list from "../data/projects_list";
+import { openModal } from "../features/modal/modalSlice";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,6 +12,7 @@ const Slider = () => {
   const [active, setActive] = useState(Math.floor(projects_list.length / 2));
   const itemsRef = useRef([]);
   const [slides, setSlides] = useState(projects_list);
+  const dispatch = useDispatch();
 
   const loadShow = () => {
     const items = itemsRef.current;
@@ -68,13 +71,12 @@ const Slider = () => {
       <div className="slider-items">
         {slides.map((slide) => {
           return (
-            <div className="card-wrapper">
+            <div key={slide.id} className="card-wrapper">
               <div
                 role="button"
                 onClick={() => {
-                  console.log(`Card ${slide.title} clicked!`);
+                  dispatch(openModal());
                 }}
-                key={slide.id}
                 className="card"
                 ref={(el) => (itemsRef.current[slides.indexOf(slide)] = el)}
               >
