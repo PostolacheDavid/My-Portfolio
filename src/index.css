@@ -47,6 +47,18 @@ img {
 
 /* || GENERAL STYLES */
 
+.about-section::after,
+.projects-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: var(--MINT-GREEN-DARK);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -240,17 +252,6 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-
-.about-section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 2px;
-  background-color: var(--MINT-GREEN-DARK);
 }
 
 .about-img {
@@ -566,6 +567,8 @@ main {
 /* || PROJECTS SECTION */
 
 .projects-section {
+  position: relative;
+  scroll-margin-top: 5rem;
   height: calc(100vh - 5rem);
   display: flex;
   justify-content: center;
@@ -738,4 +741,47 @@ main {
   width: 120%;
   margin-left: -10%;
   overflow: visible;
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+  height: calc(100vh - 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-wrapper {
+  width: 95%;
+  height: 95%;
+  /* border: 10px outset var(--LIGHT-SEA-GREEN); */
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact-info {
+  border: 2px solid red;
+  width: 50%;
+  height: 100%;
+}
+
+.contact-info h1 {
+  text-align: left;
+  font-size: xx-large;
+  padding: 0.5rem 0.5rem;
+  color: var(--LIGHT-SEA-GREEN);
+}
+
+.contact-info p {
+  text-align: left;
+  padding: 0 0.5rem;
+}
+
+.contact-wrapper .contact-form {
+  width: 50%;
+  height: 100%;
 }
