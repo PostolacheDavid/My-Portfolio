@@ -28,7 +28,7 @@ const projects_list = [
     title: "Elderly Care App",
     description: "A medical app built with Python and MySql",
     image: "💊",
-    link: "http://localhost:5173/",
+    link: "",
     github: "https://github.com/PostolacheDavid/My-Portfolio",
   },
 ];

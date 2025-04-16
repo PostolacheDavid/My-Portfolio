@@ -15,16 +15,20 @@ const Modal = () => {
           <h2>Where do you want to go?</h2>
         </div>
         <div className="btn-container">
-          <a
-            href={projectLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              dispatch(closeModal());
-            }}
-          >
-            See Project
-          </a>
+          {projectLink ? (
+            <a
+              href={projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                dispatch(closeModal());
+              }}
+            >
+              See Project
+            </a>
+          ) : (
+            <p>This project isn't uploaded to any website :P</p>
+          )}
           <a
             href={github}
             target="_blank"

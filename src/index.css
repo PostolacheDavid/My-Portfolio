@@ -679,7 +679,7 @@ main {
 .modal {
   background-color: var(--MINT-GREEN);
   color: var(--LIGHT-SEA-GREEN);
-  width: 50%;
+  width: 25%;
   height: 50%;
   border-radius: 2rem;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
@@ -731,4 +731,11 @@ main {
 
 .btn-container button:hover {
   background-color: var(--HUNYADI-YELLOW);
+}
+
+.btn-container p {
+  text-align: center;
+  width: 120%;
+  margin-left: -10%;
+  overflow: visible;
 }
