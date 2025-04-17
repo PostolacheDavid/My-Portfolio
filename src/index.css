@@ -764,7 +764,6 @@ main {
 }
 
 .contact-info {
-  border: 2px solid red;
   width: 50%;
   height: 100%;
 }
@@ -776,9 +775,50 @@ main {
   color: var(--LIGHT-SEA-GREEN);
 }
 
-.contact-info p {
+.contact-info h2 {
   text-align: left;
   padding: 0 0.5rem;
+  color: var(--LIGHT-SEA-GREEN);
+}
+
+.contact-info p {
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+}
+
+.contact-info p:nth-child(2) {
+  margin-bottom: 10%;
+}
+
+.react-icon {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.react-icon2 {
+  margin-right: 0.5rem;
+}
+
+.socials {
+  margin-top: 35%;
+  font-size: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.socials-logo {
+  transition: 0.1s ease-in-out all;
+}
+
+.socials-logo:hover {
+  transform: scale(1) translateY(-10px);
+}
+
+.socials-logo:active {
+  transform: translateY(5px);
 }
 
 .contact-wrapper .contact-form {
