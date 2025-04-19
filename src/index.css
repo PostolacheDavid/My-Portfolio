@@ -14,6 +14,12 @@ img {
   height: auto;
 }
 
+input,
+button,
+textarea {
+  font: inherit;
+}
+
 /* || VARIABLES */
 
 :root {
@@ -747,6 +753,7 @@ main {
 
 .contact-section {
   height: calc(100vh - 5rem);
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -766,6 +773,10 @@ main {
 .contact-info {
   width: 50%;
   height: 100%;
+  opacity: 0;
+  transform: translateX(0);
+  visibility: hidden;
+  will-change: transform, opacity;
 }
 
 .contact-info h1 {
@@ -829,7 +840,10 @@ main {
 .contact-form {
   width: 50%;
   height: 100%;
-  /* border: 2px solid red; */
+  opacity: 0;
+  transform: translateX(0);
+  visibility: hidden;
+  will-change: transform, opacity;
 }
 
 .contact-form form {

@@ -1,19 +1,65 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { gsap } from "gsap/gsap-core";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { IoMail, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [subject, setSubject] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".contact-info", {
+        scrollTrigger: {
+          trigger: ".contact-info",
+          start: "bottom bottom",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        visibility: "visible",
+        duration: 1.5,
+        ease: "power3.out",
+      });
+
+      gsap.to(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-form",
+          start: "bottom bottom",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        visibility: "visible",
+        duration: 1.5,
+        ease: "power3.out",
+      });
+    }, contactRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const [message, setMessage] = useState({
+    name: "",
+    subject: "",
+    email: "",
+    content: "",
+  });
+
+  const handleChange = (e) => {
+    setMessage({ ...message, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("form sent");
   };
   return (
-    <section id="Contact" className="contact-section">
+    <section id="Contact" className="contact-section" ref={contactRef}>
       <div className="contact-wrapper">
         <article className="contact-info">
           <h1>Interested in working together?</h1>
@@ -58,10 +104,8 @@ const Contact = () => {
                   name="name"
                   id="name"
                   placeholder="Name:"
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
+                  value={message.name}
+                  onChange={handleChange}
                 />
               </p>
               <p>
@@ -73,10 +117,8 @@ const Contact = () => {
                   name="email"
                   id="email"
                   placeholder="Email:"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  value={message.email}
+                  onChange={handleChange}
                 />
               </p>
               <p>
@@ -88,26 +130,22 @@ const Contact = () => {
                   name="subject"
                   id="subject"
                   placeholder="Subject:"
-                  value={subject}
-                  onChange={(e) => {
-                    setSubject(e.target.value);
-                  }}
+                  value={message.subject}
+                  onChange={handleChange}
                 />
               </p>
               <p>
-                <label htmlFor="message" className="offscreen">
+                <label htmlFor="content" className="offscreen">
                   Your message:
                 </label>
                 <textarea
-                  name="message"
-                  id="message"
+                  name="content"
+                  id="content"
                   rows="5"
                   cols="40"
                   placeholder="Your message..."
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
+                  value={message.content}
+                  onChange={handleChange}
                 ></textarea>
               </p>
               <button type="submit">Submit</button>
