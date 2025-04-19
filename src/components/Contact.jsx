@@ -20,7 +20,6 @@ const Contact = () => {
         },
         x: 0,
         opacity: 1,
-        visibility: "visible",
         duration: 1.5,
         ease: "power3.out",
       });
@@ -34,7 +33,6 @@ const Contact = () => {
         },
         x: 0,
         opacity: 1,
-        visibility: "visible",
         duration: 1.5,
         ease: "power3.out",
       });
