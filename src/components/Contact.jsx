@@ -10,7 +10,107 @@ const Contact = () => {
   const contactRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    // Mobile (<=575px)
+    mm.add("(max-width: 575px)", () => {
+      gsap.set(".contact-info", { x: -150, opacity: 0 });
+      gsap.set(".contact-form", { x: 150, opacity: 0 });
+
+      gsap.to(".contact-info", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top top",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+
+      gsap.to(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top top",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+    });
+
+    // Small Tablets (576px - 767px)
+    mm.add("(min-width: 576px) and (max-width: 767px)", () => {
+      gsap.set(".contact-info", { x: -180, opacity: 0 });
+      gsap.set(".contact-form", { x: 180, opacity: 0 });
+
+      gsap.to(".contact-info", {
+        scrollTrigger: {
+          trigger: ".contact-info",
+          start: "top 85%",
+          toggleActions: "play none play none",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power3.out",
+      });
+
+      gsap.to(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-form",
+          start: "top 85%",
+          toggleActions: "play none play none",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power3.out",
+      });
+    });
+
+    // Medium Tablets (768px - 992px)
+    mm.add("(min-width: 768px) and (max-width: 992px)", () => {
+      gsap.set(".contact-info", { x: -200, opacity: 0 });
+      gsap.set(".contact-form", { x: 200, opacity: 0 });
+
+      gsap.to(".contact-info", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top top",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power3.out",
+      });
+
+      gsap.to(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top top",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power3.out",
+      });
+    });
+
+    // Larger Screens (>=993px)
+    mm.add("(min-width: 993px)", () => {
+      gsap.set(".contact-info", { x: -200, opacity: 0 });
+      gsap.set(".contact-form", { x: 200, opacity: 0 });
+
       gsap.to(".contact-info", {
         scrollTrigger: {
           trigger: ".contact-info",
@@ -36,9 +136,9 @@ const Contact = () => {
         duration: 1.5,
         ease: "power3.out",
       });
-    }, contactRef);
+    });
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   const [message, setMessage] = useState({

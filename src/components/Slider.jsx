@@ -47,19 +47,81 @@ const Slider = () => {
   };
 
   useEffect(() => {
-    gsap.to(".slider", {
-      scrollTrigger: {
-        trigger: ".slider",
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play reverse play reverse",
-      },
-      x: 0,
-      opacity: 1,
-      duration: 1.5,
-      ease: "power3.out",
+    const mm = gsap.matchMedia();
+
+    // Mobile
+    mm.add("(max-width: 575px)", () => {
+      gsap.set(".slider", { x: -150, opacity: 0 });
+
+      gsap.to(".slider", {
+        scrollTrigger: {
+          trigger: ".slider",
+          start: "bottom bottom",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+      });
     });
-  }, [sliderRef]);
+
+    // Small Tablets (576px - 767px)
+    mm.add("(min-width: 576px) and (max-width: 767px)", () => {
+      gsap.set(".slider", { x: -180, opacity: 0 });
+
+      gsap.to(".slider", {
+        scrollTrigger: {
+          trigger: ".slider",
+          start: "bottom bottom",
+          toggleActions: "play none play none",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power3.out",
+      });
+    });
+
+    // Medium Tablets (768px - 992px)
+    mm.add("(min-width: 768px) and (max-width: 992px)", () => {
+      gsap.set(".slider", { x: -200, opacity: 0 });
+
+      gsap.to(".slider", {
+        scrollTrigger: {
+          trigger: ".slider",
+          start: "bottom bottom ",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power3.out",
+      });
+    });
+
+    // Larger screens (>=993px)
+    mm.add("(min-width: 993px)", () => {
+      gsap.set(".slider", { x: -200, opacity: 0 });
+
+      gsap.to(".slider", {
+        scrollTrigger: {
+          trigger: ".slider",
+          start: "top 80%",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+    });
+
+    return () => mm.revert();
+  }, []);
 
   useEffect(() => {
     loadShow();
