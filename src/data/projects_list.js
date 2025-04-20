@@ -31,6 +31,14 @@ const projects_list = [
     link: "",
     github: "https://github.com/PostolacheDavid/My-Portfolio",
   },
+  {
+    id: 5,
+    title: "Shopping cart app",
+    description: "A shopping cart page",
+    image: "🛒",
+    link: "http://localhost:5173/",
+    github: "https://github.com/PostolacheDavid/phone-catalog",
+  },
 ];
 
 export default projects_list;

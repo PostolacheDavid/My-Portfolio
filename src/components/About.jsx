@@ -9,7 +9,139 @@ const About = () => {
   const aboutRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    // Mobile devices (<= 575px)
+    mm.add("(max-width: 575px)", () => {
+      gsap.set(".about-img", { x: -150, opacity: 0 });
+      gsap.set(".info-card", { x: 150, opacity: 0 });
+
+      gsap.to(".about-img", {
+        scrollTrigger: {
+          trigger: ".about-section",
+          start: "bottom bottom",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+
+      gsap.to(".info-card", {
+        scrollTrigger: {
+          trigger: ".info-card",
+          start: "bottom bottom",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+    });
+
+    // Small tablets (576px - 767px)
+    mm.add("(min-width: 576px) and (max-width: 767px)", () => {
+      gsap.set(".about-img", { x: -180, opacity: 0 });
+      gsap.set(".info-card", { x: 180, opacity: 0 });
+
+      gsap.to(".about-img", {
+        scrollTrigger: {
+          trigger: ".about-section",
+          start: "top 85%",
+          toggleActions: "play none play none",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power3.out",
+      });
+
+      gsap.to(".info-card", {
+        scrollTrigger: {
+          trigger: ".info-card",
+          start: "top 85%",
+          toggleActions: "play none play none",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power3.out",
+      });
+    });
+
+    // Tablets (768px - 992px)
+    mm.add("(min-width: 768px) and (max-width: 992px)", () => {
+      gsap.set(".about-img", { x: -200, opacity: 0 });
+      gsap.set(".info-card", { x: 200, opacity: 0 });
+
+      gsap.to(".about-img", {
+        scrollTrigger: {
+          trigger: ".about-section",
+          start: "bottom bottom",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power3.out",
+      });
+
+      gsap.to(".info-card", {
+        scrollTrigger: {
+          trigger: ".info-card",
+          start: "bottom bottom",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power3.out",
+      });
+    });
+
+    // Laptops (992px - 1200px)
+    mm.add("(min-width: 992px) and (max-width: 1200px)", () => {
+      gsap.set(".about-img", { x: -200, opacity: 0 });
+      gsap.set(".info-card", { x: 200, opacity: 0 });
+
+      gsap.to(".about-img", {
+        scrollTrigger: {
+          trigger: ".about-section",
+          start: "top 80%",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+
+      gsap.to(".info-card", {
+        scrollTrigger: {
+          trigger: ".info-card",
+          start: "top 85%",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+    });
+
+    // Desktops (>= 1201px)
+    mm.add("(min-width: 1201px)", () => {
+      gsap.set(".about-img", { x: -200, opacity: 0 });
+      gsap.set(".info-card", { x: 200, opacity: 0 });
+
       gsap.to(".about-img", {
         scrollTrigger: {
           trigger: ".about-img",
@@ -35,9 +167,9 @@ const About = () => {
         duration: 1.5,
         ease: "power3.out",
       });
-    }, aboutRef);
+    });
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   return (
