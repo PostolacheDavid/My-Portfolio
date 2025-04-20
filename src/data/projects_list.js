@@ -4,7 +4,7 @@ const projects_list = [
     title: "Portfolio Website",
     description: "A responsive portfolio built with React and GSAP animations.",
     image: "📃",
-    link: "http://localhost:5173/",
+    link: "davidpostolache.com",
     github: "https://github.com/PostolacheDavid/My-Portfolio",
   },
   {
@@ -12,7 +12,7 @@ const projects_list = [
     title: "Vanilla JS Game",
     description: "A game built in javascript without any frameworks",
     image: "🎮",
-    link: "http://localhost:5173/",
+    link: "davidpostolache.com",
     github: "https://github.com/PostolacheDavid/My-Portfolio",
   },
   {
@@ -20,7 +20,7 @@ const projects_list = [
     title: "Chat Room",
     description: "A chat room website made in react",
     image: "💬",
-    link: "http://localhost:5173/",
+    link: "davidpostolache.com",
     github: "https://github.com/PostolacheDavid/My-Portfolio",
   },
   {
@@ -36,7 +36,7 @@ const projects_list = [
     title: "Shopping cart app",
     description: "A shopping cart page",
     image: "🛒",
-    link: "http://localhost:5173/",
+    link: "davidpostolache.com",
     github: "https://github.com/PostolacheDavid/phone-catalog",
   },
 ];
