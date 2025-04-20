@@ -49,7 +49,7 @@ const Slider = () => {
   useEffect(() => {
     const mm = gsap.matchMedia();
 
-    // Mobile
+    // Mobile (<= 575px)
     mm.add("(max-width: 575px)", () => {
       gsap.set(".slider", { x: -150, opacity: 0 });
 
@@ -91,7 +91,7 @@ const Slider = () => {
       gsap.to(".slider", {
         scrollTrigger: {
           trigger: ".slider",
-          start: "bottom bottom ",
+          start: "bottom bottom",
           end: "bottom 30%",
           toggleActions: "play reverse play reverse",
         },
@@ -102,8 +102,26 @@ const Slider = () => {
       });
     });
 
-    // Larger screens (>=993px)
-    mm.add("(min-width: 993px)", () => {
+    // Laptops (992px - 1200px)
+    mm.add("(min-width: 992px) and (max-width: 1200px)", () => {
+      gsap.set(".slider", { x: -200, opacity: 0 });
+
+      gsap.to(".slider", {
+        scrollTrigger: {
+          trigger: ".slider",
+          start: "top 90%",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+    });
+
+    // Larger screens (>= 1201px)
+    mm.add("(min-width: 1201px)", () => {
       gsap.set(".slider", { x: -200, opacity: 0 });
 
       gsap.to(".slider", {

@@ -105,8 +105,40 @@ const About = () => {
       });
     });
 
-    // Desktops (>= 993px)
-    mm.add("(min-width: 993px)", () => {
+    // Laptops (992px - 1200px)
+    mm.add("(min-width: 992px) and (max-width: 1200px)", () => {
+      gsap.set(".about-img", { x: -200, opacity: 0 });
+      gsap.set(".info-card", { x: 200, opacity: 0 });
+
+      gsap.to(".about-img", {
+        scrollTrigger: {
+          trigger: ".about-section",
+          start: "top 80%",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+
+      gsap.to(".info-card", {
+        scrollTrigger: {
+          trigger: ".info-card",
+          start: "top 85%",
+          end: "bottom 60%",
+          toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+    });
+
+    // Desktops (>= 1201px)
+    mm.add("(min-width: 1201px)", () => {
       gsap.set(".about-img", { x: -200, opacity: 0 });
       gsap.set(".info-card", { x: 200, opacity: 0 });
 

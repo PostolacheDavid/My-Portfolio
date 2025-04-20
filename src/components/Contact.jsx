@@ -20,9 +20,9 @@ const Contact = () => {
       gsap.to(".contact-info", {
         scrollTrigger: {
           trigger: ".contact-section",
-          start: "top top",
-          end: "bottom 30%",
-          toggleActions: "play reverse play reverse",
+          start: "top 90%",
+          end: "bottom 60%",
+          toggleActions: "play none none reverse",
         },
         x: 0,
         opacity: 1,
@@ -33,9 +33,9 @@ const Contact = () => {
       gsap.to(".contact-form", {
         scrollTrigger: {
           trigger: ".contact-section",
-          start: "top top",
-          end: "bottom 30%",
-          toggleActions: "play reverse play reverse",
+          start: "top 90%",
+          end: "bottom 60%",
+          toggleActions: "play none none reverse",
         },
         x: 0,
         opacity: 1,
@@ -51,71 +51,73 @@ const Contact = () => {
 
       gsap.to(".contact-info", {
         scrollTrigger: {
-          trigger: ".contact-info",
-          start: "top 85%",
-          toggleActions: "play none play none",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1.3,
-        ease: "power3.out",
-      });
-
-      gsap.to(".contact-form", {
-        scrollTrigger: {
-          trigger: ".contact-form",
-          start: "top 85%",
-          toggleActions: "play none play none",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1.3,
-        ease: "power3.out",
-      });
-    });
-
-    // Medium Tablets (768px - 992px)
-    mm.add("(min-width: 768px) and (max-width: 992px)", () => {
-      gsap.set(".contact-info", { x: -200, opacity: 0 });
-      gsap.set(".contact-form", { x: 200, opacity: 0 });
-
-      gsap.to(".contact-info", {
-        scrollTrigger: {
           trigger: ".contact-section",
-          start: "top top",
-          end: "bottom 30%",
-          toggleActions: "play reverse play reverse",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1.4,
-        ease: "power3.out",
-      });
-
-      gsap.to(".contact-form", {
-        scrollTrigger: {
-          trigger: ".contact-section",
-          start: "top top",
-          end: "bottom 30%",
-          toggleActions: "play reverse play reverse",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1.4,
-        ease: "power3.out",
-      });
-    });
-
-    // Larger Screens (>=993px)
-    mm.add("(min-width: 993px)", () => {
-      gsap.set(".contact-info", { x: -200, opacity: 0 });
-      gsap.set(".contact-form", { x: 200, opacity: 0 });
-
-      gsap.to(".contact-info", {
-        scrollTrigger: {
-          trigger: ".contact-info",
-          start: "bottom bottom",
+          start: "top 90%",
           end: "bottom 60%",
+          toggleActions: "play none none reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power3.out",
+      });
+
+      gsap.to(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top 90%",
+          end: "bottom 60%",
+          toggleActions: "play none none reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power3.out",
+      });
+    });
+
+    // Medium Tablets (768px - 991px)
+    mm.add("(min-width: 768px) and (max-width: 991px)", () => {
+      gsap.set(".contact-info", { x: -200, opacity: 0 });
+      gsap.set(".contact-form", { x: 200, opacity: 0 });
+
+      gsap.to(".contact-info", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top 85%",
+          end: "bottom 50%",
+          toggleActions: "play none none reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power3.out",
+      });
+
+      gsap.to(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top 85%",
+          end: "bottom 50%",
+          toggleActions: "play none none reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power3.out",
+      });
+    });
+
+    // Large Tablets / Small Desktops (992px - 1200px)
+    mm.add("(min-width: 992px) and (max-width: 1200px)", () => {
+      gsap.set(".contact-info", { x: -200, opacity: 0 });
+      gsap.set(".contact-form", { x: 200, opacity: 0 });
+
+      gsap.to(".contact-info", {
+        scrollTrigger: {
+          trigger: ".contact-info",
+          start: "top 80%",
+          end: "bottom 50%",
           toggleActions: "play reverse play reverse",
         },
         x: 0,
@@ -127,9 +129,41 @@ const Contact = () => {
       gsap.to(".contact-form", {
         scrollTrigger: {
           trigger: ".contact-form",
-          start: "bottom bottom",
-          end: "bottom 60%",
+          start: "top 80%",
+          end: "bottom 50%",
           toggleActions: "play reverse play reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+    });
+
+    // Desktops (>=1201px)
+    mm.add("(min-width: 1201px)", () => {
+      gsap.set(".contact-info", { x: -200, opacity: 0 });
+      gsap.set(".contact-form", { x: 200, opacity: 0 });
+
+      gsap.to(".contact-info", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top 85%",
+          end: "bottom 50%",
+          toggleActions: "play none none reverse",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+
+      gsap.to(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-section",
+          start: "top 85%",
+          end: "bottom 50%",
+          toggleActions: "play none none reverse",
         },
         x: 0,
         opacity: 1,
