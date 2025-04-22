@@ -413,7 +413,6 @@ main {
   height: 50%;
   border-radius: 2rem;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  /* border: 5px solid var(--LIGHT-SEA-GREEN); */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -468,6 +467,16 @@ main {
   width: 120%;
   margin-left: -10%;
   overflow: visible;
+}
+
+.btn-container .ok-btn {
+  margin-top: 50%;
+  width: 220%;
+}
+
+.formModal {
+  height: 25%;
+  width: 30%;
 }
 
 /* CONTACT SECTION */
