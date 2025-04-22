@@ -225,6 +225,7 @@ const Contact = () => {
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            onSubmit="submit"
           >
             <input type="hidden" name="form-name" value="contact" />
             <p hidden>
