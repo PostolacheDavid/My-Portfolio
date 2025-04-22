@@ -194,23 +194,35 @@ const Contact = () => {
     const form = e.target;
 
     const data = new FormData(form);
+
     data.append("form-name", "contact");
+
+    const encodedData = new URLSearchParams(data).toString();
+    console.log("📦 Sending to Netlify:", encodedData);
 
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString(),
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: encodedData,
     })
-      .then(() => {
-        dispatch(openModal({ isForm: true, isError: false }));
-        form.reset();
+      .then((response) => {
+        if (response.ok) {
+          console.log("Form submitted successfully!");
+          dispatch(openModal({ isForm: true, isError: false }));
+          form.reset();
+        } else {
+          return response.text().then((text) => {
+            console.error("Netlify error response:", text);
+            dispatch(openModal({ isForm: true, isError: true }));
+          });
+        }
       })
       .catch((error) => {
+        console.error("Submission failed:", error);
         dispatch(openModal({ isForm: true, isError: true }));
-        console.error(error);
       });
-
-    console.log(new URLSearchParams(data).toString());
   };
 
   return (
