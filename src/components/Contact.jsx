@@ -186,10 +186,6 @@ const Contact = () => {
     setMessage({ ...message, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("form sent");
-  };
   return (
     <section id="Contact" className="contact-section" ref={contactRef}>
       <div className="contact-wrapper">
@@ -224,7 +220,13 @@ const Contact = () => {
           </div>
         </article>
         <article className="contact-form">
-          <form onSubmit={handleSubmit}>
+          <form name="contact" method="POST" data-netlify="true" netlify>
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>
+                Don’t fill this out: <input name="bot-field" />
+              </label>
+            </p>
             <fieldset>
               <h1>Leave me a message!</h1>
               <p>
@@ -238,6 +240,7 @@ const Contact = () => {
                   placeholder="Name:"
                   value={message.name}
                   onChange={handleChange}
+                  required
                 />
               </p>
               <p>
@@ -251,6 +254,7 @@ const Contact = () => {
                   placeholder="Email:"
                   value={message.email}
                   onChange={handleChange}
+                  required
                 />
               </p>
               <p>
@@ -264,6 +268,7 @@ const Contact = () => {
                   placeholder="Subject:"
                   value={message.subject}
                   onChange={handleChange}
+                  required
                 />
               </p>
               <p>
@@ -278,6 +283,7 @@ const Contact = () => {
                   placeholder="Your message..."
                   value={message.content}
                   onChange={handleChange}
+                  required
                 ></textarea>
               </p>
               <button type="submit">Submit</button>
