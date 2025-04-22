@@ -161,7 +161,7 @@ const Slider = () => {
                       githubLink: slide.github,
                     })
                   );
-                  dispatch(openModal());
+                  dispatch(openModal({ isForm: false, isError: false }));
                 }}
                 className="card"
                 ref={(el) => (itemsRef.current[slides.indexOf(slide)] = el)}

@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { openModal } from "../features/modal/modalSlice";
+import { useDispatch } from "react-redux";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { IoMail, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
@@ -7,6 +9,7 @@ import { FaLocationDot } from "react-icons/fa6";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  const dispatch = useDispatch();
   const contactRef = useRef(null);
 
   useEffect(() => {
@@ -186,6 +189,27 @@ const Contact = () => {
     setMessage({ ...message, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    })
+      .then(() => {
+        dispatch(openModal({ isForm: true, isError: false }));
+        form.reset();
+      })
+      .catch((error) => {
+        dispatch(openModal({ isForm: true, isError: true }));
+        console.error(error);
+      });
+  };
+
   return (
     <section id="Contact" className="contact-section" ref={contactRef}>
       <div className="contact-wrapper">
@@ -225,6 +249,7 @@ const Contact = () => {
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="contact" />
             <p hidden>
