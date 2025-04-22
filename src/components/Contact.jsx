@@ -220,7 +220,12 @@ const Contact = () => {
           </div>
         </article>
         <article className="contact-form">
-          <form name="contact" method="POST" data-netlify="true" netlify>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
             <input type="hidden" name="form-name" value="contact" />
             <p hidden>
               <label>
