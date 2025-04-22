@@ -194,6 +194,7 @@ const Contact = () => {
     const form = e.target;
 
     const data = new FormData(form);
+    data.append("form-name", "contact");
 
     fetch("/", {
       method: "POST",
