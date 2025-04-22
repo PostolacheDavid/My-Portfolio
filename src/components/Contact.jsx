@@ -198,7 +198,7 @@ const Contact = () => {
     data.append("form-name", "contact");
 
     const encodedData = new URLSearchParams(data).toString();
-    console.log("📦 Sending to Netlify:", encodedData);
+    console.log("Sending to Netlify:", encodedData);
 
     fetch("/", {
       method: "POST",

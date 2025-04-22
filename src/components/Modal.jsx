@@ -54,7 +54,7 @@ const Modal = () => {
         ) : (
           <div>
             <h2>
-              {isError ? "Message Sent!" : "Sorry, something went wrong!"}
+              {!isError ? "Message Sent!" : "Sorry, something went wrong!"}
             </h2>
             <div className="btn-container">
               <button
