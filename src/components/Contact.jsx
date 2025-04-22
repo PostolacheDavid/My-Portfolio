@@ -209,6 +209,8 @@ const Contact = () => {
         dispatch(openModal({ isForm: true, isError: true }));
         console.error(error);
       });
+
+    console.log(new URLSearchParams(data).toString());
   };
 
   return (
