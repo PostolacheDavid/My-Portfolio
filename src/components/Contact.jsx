@@ -255,7 +255,13 @@ const Contact = () => {
             >
               <IoLogoGithub className="socials-logo" />
             </a>
-            <IoLogoLinkedin className="socials-logo" />
+            <a
+              href="https://www.linkedin.com/in/david-postolache/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IoLogoLinkedin className="socials-logo" />
+            </a>
           </div>
         </article>
         <article className="contact-form">
