@@ -178,25 +178,27 @@ const About = () => {
       <div className="info-card">
         <h1>Hi, I'm David!</h1>
         <p>
-          I am a third-year Computer Science student with a strong interest in
-          design, tehnology, and front-end development.
+          I recently graduated with a Bachelor's degree in Computer Science from
+          the University of Bucharest and am now pursuing a Master's in
+          Distributed Systems.
           <br />
           <br />
-          I'm passionate about creating clean, responsive, and user-focused
-          interfaces using modern web technologies like React, JavaScript, and
-          CSS. I love working on interactive components, smooth animations and
-          designs that not only look good but feel great to use.
+          I'm passionate about building clean, scalable, and user-focused
+          applications using modern web technologies. While I’ve worked
+          extensively with React, JavaScript, and CSS on the front end, I’m
+          expanding my skills toward full-stack development to create complete,
+          high-performance solutions.
           <br />
           <br />
-          Beyond development, I'm deeply interested in the design process and
-          how great UI/UX can elevate a product. I'm constantly learning,
-          building, and pushing myself to improve both as a developer and as a
-          creative problem solver.
+          Beyond coding, I’m deeply interested in design and how thoughtful
+          UI/UX can transform user experiences. I enjoy working on interactive
+          components, smooth animations, and interfaces that are both intuitive
+          and visually engaging.
           <br />
           <br />
-          I'm currently seeking a front-end development internship where I can
-          contribute, grow, and work alongside experienced teams to build
-          meaningful digital experiences.
+          I'm currently seeking a full-stack or software engineering position
+          where I can contribute, grow, and collaborate with talented teams to
+          develop impactful digital products.
           <br />
           <br />
         </p>
