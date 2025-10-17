@@ -178,9 +178,9 @@ const About = () => {
       <div className="info-card">
         <h1>Hi, I'm David!</h1>
         <p>
-          I recently graduated with a Bachelor's degree in Computer Science from
-          the University of Bucharest and am now pursuing a Master's in
-          Distributed Systems.
+          I recently graduated with a Bachelor's degree in Computer Science and
+          am now pursuing a Master's in Distributed Systems at the University of
+          Bucharest.
           <br />
           <br />
           I'm passionate about building clean, scalable, and user-focused
