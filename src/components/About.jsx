@@ -190,12 +190,6 @@ const About = () => {
           high-performance solutions.
           <br />
           <br />
-          Beyond coding, I’m deeply interested in design and how thoughtful
-          UI/UX can transform user experiences. I enjoy working on interactive
-          components, smooth animations, and interfaces that are both intuitive
-          and visually engaging.
-          <br />
-          <br />
           I'm currently seeking a full-stack or software engineering position
           where I can contribute, grow, and collaborate with talented teams to
           develop impactful digital products.
